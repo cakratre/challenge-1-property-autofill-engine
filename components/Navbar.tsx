@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Home, User, Settings, Mail, Menu, X, LogIn, UserPlus } from 'lucide-react';
 
 interface NavItem {
@@ -57,14 +58,14 @@ const Navbar: React.FC<NavbarProps> = ({
 
           {/* Desktop Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="text-[#171717] hover:text-gray-600 p-5 rounded-full text-sm font-medium transition-all duration-300 ease-in-out flex items-center space-x-1 hover:scale-105 hover:-translate-y-0.5 group">
+            <Link href="/auth/login" className="text-[#171717] hover:text-gray-600 p-5 rounded-full text-sm font-medium transition-all duration-300 ease-in-out flex items-center space-x-1 hover:scale-105 hover:-translate-y-0.5 group">
               <LogIn size={16} className="group-hover:rotate-12 transition-transform duration-300" />
               <span>Login</span>
-            </button>
-            <button className="bg-[#171717] text-[#EEEEEE] hover:bg-gray-800 p-5 rounded-full text-sm font-medium transition-all duration-300 ease-in-out flex items-center space-x-1 hover:scale-105 hover:-translate-y-0.5 transform active:scale-95 group">
+            </Link>
+            <Link href="/auth/register" className="bg-[#171717] text-[#EEEEEE] hover:bg-gray-800 p-5 rounded-full text-sm font-medium transition-all duration-300 ease-in-out flex items-center space-x-1 hover:scale-105 hover:-translate-y-0.5 transform active:scale-95 group">
               <UserPlus size={16} className="group-hover:rotate-12 transition-transform duration-300" />
               <span>Register</span>
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -102,14 +103,14 @@ const Navbar: React.FC<NavbarProps> = ({
           
           {/* Mobile Auth Buttons */}
           <div className={`pt-4 pb-2 border-t border-gray-200 transform transition-all duration-300 ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`} style={{ transitionDelay: '400ms' }}>
-            <button className="text-[#171717] hover:text-gray-600 w-full text-left p-5 rounded-full text-base font-medium transition-all duration-300 ease-in-out flex items-center space-x-3 hover:translate-x-2 hover:bg-gray-200 group">
+            <Link href="/auth/login" className="text-[#171717] hover:text-gray-600 w-full text-left p-5 rounded-full text-base font-medium transition-all duration-300 ease-in-out flex items-center space-x-3 hover:translate-x-2 hover:bg-gray-200 group">
               <LogIn size={18} className="group-hover:rotate-12 transition-transform duration-300" />
               <span>Login</span>
-            </button>
-            <button className="bg-[#171717] text-[#EEEEEE] hover:bg-gray-800 w-full text-left p-5 rounded-full text-base font-medium transition-all duration-300 ease-in-out flex items-center space-x-3 hover:translate-x-2 active:scale-95 group">
+            </Link>
+            <Link href="/auth/register" className="bg-[#171717] text-[#EEEEEE] hover:bg-gray-800 w-full text-left p-5 rounded-full text-base font-medium transition-all duration-300 ease-in-out flex items-center space-x-3 hover:translate-x-2 active:scale-95 group">
               <UserPlus size={18} className="group-hover:rotate-12 transition-transform duration-300" />
               <span>Register</span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
